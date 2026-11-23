@@ -100,7 +100,7 @@
 			"imu.jpeg",
 			"kaido.webp",
 			"nami.webp",
-			"nico.webp",
+			"nicorobin.webp",
 			"sanji.webp",
 			"zoro.webp"
 		];
@@ -112,38 +112,30 @@
 		function apri() {
 			img = document.immagine.sito.value;
 
-			for (let i = 0; i < personaggi.length; i++) {
-				if (personaggi[i] == img) {
-					img = i;
-				}
-			}
-
 			let box = document.getElementById("box");
 			box.style.display = "block";
 			box.innerHTML = "<img src='" + personaggi[img] + "'/>";
 		}
 		
 		function successivo() {
-			if (img < personaggi.length -1) {
+			if (img < personaggi.length - 1) {
 				img++;
 			} else {
 				img = 0;
 			} 
-		 document.immagine.sito.value = personaggi[img];
-		 apri();
+			document.immagine.sito.value = img;
+			apri();
 		}
 		
 		function precedente() {
 			if (img > 0) {
 				img--;
 			} else {
-				img = personaggi.length -1;
+				img = personaggi.length - 1;
 			} 
-			document.immagine.sito.value = personaggi[img];
+			document.immagine.sito.value = img;
 			apri();
 		}
-		
-		
-	  </script>
+	</script>
 </body>
 </html>
